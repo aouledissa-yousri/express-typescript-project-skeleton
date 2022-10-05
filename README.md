@@ -16,3 +16,7 @@
 3. Models: 
     * npm run create-model <model_name> (create model)
     * npm run delete-model <model_name> (delete model)
+
+# optional (recommended)
+
+* delete default controller, service and model (MainController, MainService, MainModel)
