@@ -19,7 +19,8 @@ if(operation == "create" || operation == "c"){
             )
 
 
-            fs.writeFile("src/controllers/"+controllerName+"/"+controllerName+"Test.spec.ts", `import { ${controllerName} } from "./${controllerName}" \n` + fs.readFileSync("scripts/test.txt", "utf-8")
+            fs.writeFile("src/controllers/"+controllerName+"/"+controllerName+"Test.spec.ts", `import { ${controllerName} } from "./${controllerName}" \n\n` + 
+                `describe("Testing ${controllerName} ", () => { \n\ttest("", () => {}) \n})`
                 ,(error) => {
                     if(error) throw error 
                 }
