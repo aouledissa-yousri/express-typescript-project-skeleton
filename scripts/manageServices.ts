@@ -12,7 +12,14 @@ if(operation == "create" || operation == "c"){
     fs.mkdir("src/services/"+serviceName, () => {return})
     fs.writeFile("src/services/"+serviceName+"/"+serviceName+".ts", `export abstract class ${serviceName} {}`, (error) => {
         if(error) throw error 
-        else console.log(serviceName + " Has been created successfully".green)
+        else {
+            fs.writeFile("src/services/"+serviceName+"/"+serviceName+"Test.spec.ts", `import { ${serviceName} } from "./${serviceName}" \n` + fs.readFileSync("scripts/test.txt", "utf-8")
+                ,(error) => {
+                    if(error) throw error 
+                }
+            )
+            console.log(serviceName + " Has been created successfully".green)
+        }
     })
 
 }else if(operation == "delete" || operation == "d"){

@@ -13,7 +13,6 @@
     "delete-controller": "ts-node scripts/manageControllers.ts delete",
     "delete-model": "ts-node scripts/manageModels.ts delete",
     "delete-service": "ts-node scripts/manageServices.ts delete"
-
   },
   "keywords": [],
   "author": "",
@@ -29,6 +28,8 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
-    "@types/node": "^18.8.2"
+    "@types/jest": "^29.1.1",
+    "@types/node": "^18.8.2",
+    "jest": "^29.1.2"
   }
 }

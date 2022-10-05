@@ -18,6 +18,14 @@ if(operation == "create" || operation == "c"){
                 }
             )
 
+
+            fs.writeFile("src/controllers/"+controllerName+"/"+controllerName+"Test.spec.ts", `import { ${controllerName} } from "./${controllerName}" \n` + fs.readFileSync("scripts/test.txt", "utf-8")
+                ,(error) => {
+                    if(error) throw error 
+                }
+            )
+
+
             console.log(controllerName.green + " Has been created successfully".green)
         }
     })
