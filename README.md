@@ -20,3 +20,4 @@
 # optional (recommended)
 
 * delete default controller, service and model (MainController, MainService, MainModel)
+* change folder's name to your project's name
