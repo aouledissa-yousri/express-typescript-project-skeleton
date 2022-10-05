@@ -8,9 +8,18 @@ let controllerName = process.argv[3].charAt(0).toUpperCase() + process.argv[3].s
 if(operation == "create" || operation == "c"){
     console.log("Creating controller...".blue)
     fs.mkdir("src/controllers/"+controllerName, () => {return})
+   
     fs.writeFile("src/controllers/"+controllerName+"/"+controllerName+".ts", `export abstract class ${controllerName} {}`, (error) => {
         if(error) throw error 
-        else console.log(controllerName.green + " Has been created successfully".green)
+        else {
+            fs.writeFile("src/controllers/"+controllerName+"/"+controllerName+"Routes.ts", `import { ${controllerName} } from "./${controllerName}" \n` + fs.readFileSync("scripts/routes.txt", "utf-8")
+                ,(error) => {
+                    if(error) throw error 
+                }
+            )
+
+            console.log(controllerName.green + " Has been created successfully".green)
+        }
     })
 
 }else if(operation == "delete" || operation == "d"){
