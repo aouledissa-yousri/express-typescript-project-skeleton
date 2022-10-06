@@ -11,5 +11,5 @@ if(Number.isNaN(port)) port = 3000
 app.use("/", routes)
 
 app.listen(port, () => {
-    console.log("Application is listening at http://localhost:"+port)
+    console.log("Application is running on http://localhost:"+port)
 })

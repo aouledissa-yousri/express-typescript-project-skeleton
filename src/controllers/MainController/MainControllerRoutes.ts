@@ -1,11 +1,10 @@
 import { MainController } from "./MainController" 
-import express from "express"
+import express from "express" 
 
-
-let routes = express.Router()
+let mainControllerRoutes = express.Router()
 
 //put your routes here
 
-routes.get("/", (request, response) => response.send("Express TS"))
+mainControllerRoutes.get("/", (request, response) => response.send("Express TS"))
 
-export { routes }
+export { mainControllerRoutes }

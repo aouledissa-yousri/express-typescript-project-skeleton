@@ -13,7 +13,7 @@ if(operation == "create" || operation == "c"){
     fs.writeFile("src/services/"+serviceName+"/"+serviceName+".ts", `export abstract class ${serviceName} {}`, (error) => {
         if(error) throw error 
         else {
-            fs.writeFile("src/services/"+serviceName+"/"+serviceName+"Test.spec.ts", `import { ${serviceName} } from "./${serviceName}" \n\n` + 
+            fs.writeFile("src/services/"+serviceName+"/"+serviceName+"test.ts", `import { ${serviceName} } from "./${serviceName}" \n\n` + 
             `describe("Testing ${serviceName} ", () => { \n\ttest("", () => {}) \n})`
                 ,(error) => {
                     if(error) throw error 
