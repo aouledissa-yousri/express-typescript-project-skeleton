@@ -11,7 +11,7 @@ const corsOptions = []
 app.use(express.json())
 app.use(cors(corsOptions))
 
-
+//detecting input server port
 let port = parseInt(process.argv[2])
 if(Number.isNaN(port)) port = 3000
 
